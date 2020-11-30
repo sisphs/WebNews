@@ -1,0 +1,63 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="News.master.cs" Inherits="WebNews.News" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link href="Mycss/master.css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+	<script src="Scripts/jquery-3.4.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <script>
+        $(function () {
+            if (window.location.pathname == '/UserMain') {
+                $("#list2").addClass("active");
+                $("#list1").removeClass("active");
+            } else {
+                $("#list1").addClass("active");
+                $("#list2").removeClass("active");
+            }
+
+            if ($("#level").text().trim() == "user") {
+                $("#list2").addClass("hide");
+            }
+           
+     
+        });
+    </script>
+    <p style="display:none;" id="level"><%=Session["level"] %></p>
+    <form id="form1" runat="server">
+           <div id="mes">
+            <h3><asp:Label ID="Label3" runat="server" Text="" Style="margin-left:100px; margin-top:-10px; color:red;"></asp:Label></h3>
+        </div>
+        <div id="container" class="container">
+
+				<div class="col-md-12 col-sm-12 col-xs-12 ">
+     
+                    <div class="row">
+        <div id="nav" class="col-md-2 col-sm-2 col-xs-2 ">
+            <ul class="nav nav-pills nav-stacked">
+              <li id="list1" role="presentation" class="active"><a href="https://localhost:44399/Message.aspx">
+                  <asp:Label ID="Label1" runat="server" Text="Label">新闻列表</asp:Label></a></li>
+              <li id="list2" role="presentation"><a href="https://localhost:44399/UserMain.aspx">
+                  <asp:Label ID="Label2" runat="server" Text="Label">发布新闻</asp:Label></a></li>
+               <li id="list3" role="presentation"><a href="#">
+                   <asp:Button ID="Button1" Style="border:none;background-color:red; color:black;" runat="server" onclick ="Label4_click" Text="退出登录" /></a></li>
+            </ul>
+        </div>
+        <div id="cph" class="col-md-8 col-sm-8 col-xs-8 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 ">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+              </div>
+                </div>
+            </div>
+    </form>
+</body>
+</html>

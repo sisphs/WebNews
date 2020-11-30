@@ -1,0 +1,25 @@
+﻿body {
+    background: url(../images/bg.jpg);
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+#container {
+    margin-top: 80px;
+}
+
+#logo {
+    width: 320px;
+    height: 80px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.div_foot {
+    position: absolute;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    width: 100%;
+    bottom: 3%;
+}
