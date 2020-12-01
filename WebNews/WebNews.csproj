@@ -125,7 +125,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="images\bg.jpg" />
+    <Content Include="images\bg.png" />
     <Content Include="Login.aspx" />
     <Content Include="Message.aspx" />
     <Content Include="Mycss\login.css" />

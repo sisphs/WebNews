@@ -39,8 +39,10 @@ namespace WebNews
                 title.Text= sdr.GetString(0);
                 author.Text = sdr.GetString(1);
                 content.Text = sdr.GetString(2);                             
-                filename = sdr.GetString(3);
-               
+                if(!sdr.IsDBNull(3)){
+                    filename = sdr.GetString(3);
+                }
+
             }
 
             conn.Close();
